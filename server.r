@@ -26,7 +26,7 @@ userdata <- reactive(function(){
 		data1<-userdata()
 		data1<-na.omit(data1)
         rooms <- as.numeric(data1$V2)
-        selectInput('room','חדרים', choices=rooms, selected=min(rooms),multiple = T)
+        selectInput('room','', choices=rooms, selected=min(rooms),multiple = T)
     })
 #######----------
 #floor dropdown
@@ -34,7 +34,7 @@ userdata <- reactive(function(){
 output$floordropdown <- renderUI({
 		data1<-userdata()
         floor <- data1$V4
-        selectInput('floor','קומה', floor , selected=names(sort(table(floor),decreasing=T)[1]), multiple=T)
+        selectInput('floor','', floor , selected=names(sort(table(floor),decreasing=T)[1]), multiple=T)
     })
 	
  #####--------------------------
